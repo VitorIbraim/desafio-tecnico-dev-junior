@@ -4,6 +4,10 @@
     <ProjectReference Include="..\Desafio.Core\Desafio.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\..\professores.json" Link="professores.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
