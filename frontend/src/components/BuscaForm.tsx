@@ -107,7 +107,7 @@ function BuscaForm({ carregando, onBuscar }: BuscaFormProps) {
         />
       </div>
 
-      <div className="campo-largo">
+      <div className="campo-largo acoes">
         <button type="submit" disabled={carregando}>
           {carregando ? 'Buscando...' : 'Buscar professores'}
         </button>

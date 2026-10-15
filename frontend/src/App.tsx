@@ -35,14 +35,21 @@ function App() {
 
       <div className="resultado" aria-live="polite">
         {estado.tipo === 'inicial' && (
-          <p className="aviso">Preencha os critérios e clique em buscar.</p>
+          <div className="painel painel-neutro">
+            <p className="painel-titulo">Nenhuma busca realizada</p>
+            <p>Preencha os critérios acima e clique em buscar professores.</p>
+          </div>
         )}
 
-        {estado.tipo === 'carregando' && <p className="aviso">Buscando professores...</p>}
+        {estado.tipo === 'carregando' && (
+          <div className="painel painel-carregando">
+            <p className="painel-titulo">Buscando professores...</p>
+          </div>
+        )}
 
         {estado.tipo === 'validacao' && (
-          <div className="alerta">
-            <p>Verifique os dados da busca:</p>
+          <div className="painel alerta">
+            <p className="painel-titulo">Verifique os dados da busca</p>
             <ul>
               {estado.erros.map((erro, indice) => (
                 <li key={indice}>{erro}</li>
@@ -52,8 +59,9 @@ function App() {
         )}
 
         {estado.tipo === 'falha' && (
-          <div className="alerta">
-            <p>Não foi possível se comunicar com a API. Verifique se ela está em execução e tente novamente.</p>
+          <div className="painel alerta">
+            <p className="painel-titulo">Não foi possível se comunicar com a API</p>
+            <p>Verifique se ela está em execução e tente novamente.</p>
           </div>
         )}
 
